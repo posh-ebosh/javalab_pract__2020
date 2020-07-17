@@ -1,0 +1,13 @@
+.img{
+	width: 200px;
+	height: 200px;
+	align-content: center;
+}
+.contentCenter{
+	margin-left: 250px;
+	margin-right: 250px;
+
+}
+.textSize-80{
+	font-size: 110%;
+}
