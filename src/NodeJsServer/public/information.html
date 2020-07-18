@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Sabina Alikilichova</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+            integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+            crossorigin="anonymous"></script>
+
+</head>
+<script>
+    function getInformation() {
+        $.getJSON("/information", function (response) {
+            let personalInformation = "<p>Личная информация</p>";
+            personalInformation += "<ul>";
+            personalInformation += "<li><strong>Город: </strong>"+ response.city + "</li>";
+            personalInformation += "<li><strong>Возраст: </strong>"+ response.age + "</li>";
+            personalInformation += "<li><strong>Гражданство: </strong>"+ response.citizenship + "</li>";
+            personalInformation += "<li><strong>Образование: </strong>"+ response.educ + "</li>  </ul>";
+            personalInformation += "<p>Дополнительная информация</p>";
+            personalInformation += "<ul>";
+            personalInformation += "<li><strong>Компьюетрные навыки: </strong>"+ response.computer_skills + "</li>";
+            personalInformation += "<li><strong>Вредные привычки: </strong>"+ response.bad_habits + "</li>";
+            personalInformation += "<li><strong>ВКонтакте: </strong>"+ response.vk + "</li>";
+            personalInformation += "</ul>";
+            $("#information").append(personalInformation);
+
+
+        });
+    }
+</script>
+
+
+
+
+<body class="bg-dark text-center"  >
+<button onclick="getInformation()"></button>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column ">
+
+
+    <main role="main" class="inner cover">
+        <div class="mainImg">
+            <img src="https://sun9-72.userapi.com/c857136/v857136816/113a3/vrTDWZtWMug.jpg" class="rounded-circle img-fluid img" >
+        </div>
+
+        <h3 class="cover-heading text-white">Сабина Аликиличова</h3>
+        <h5 class="cover-heading text-white font-weight-light"> Java-разработчик</h5>
+                <div class="contentCenter text-left text-white text-monospace font-weight-lighter">
+                    <div  id = "information"></div>
+<!--                    <p>Личная информация</p>-->
+<!--                    <ul>-->
+<!--                        <li><strong>Город:</strong> Казань</li>-->
+<!--                        <li><strong>Возраст:</strong> 19</li>-->
+<!--                        <li><strong>Гражданство:</strong> РФ</li>-->
+<!--                        <li><strong>Образование:</strong> КФУ ВШ ИТИС</li>-->
+<!--                    </ul>-->
+<!--                    <p>Дополнительная информация</p>-->
+<!--                    <ul>-->
+<!--                        <li><strong>Компьюетрные навыки:</strong> Java, python</li>-->
+<!--                        <li><strong>Вредные привычки:</strong> Курение</li>-->
+<!--                        <li><strong>ВКонтакте</strong> https://vk.com/posh.ebosh</li>-->
+<!--                    </ul>-->
+
+                    <p>Оставить заявку: </p>
+                    <form class="emailForm">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10 offset-sm-2">
+                                <button type="submit" class="btn btn-light">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p>
+                    </p>
+                </div>
+    </main>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="scriptJS.js"></script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
